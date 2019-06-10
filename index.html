@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Deoldify Bot::UiPath</title>
+</head>
+<body>
+
+    <div class="image_video">
+        <input type="radio" name="image_video" value='0' id="image" checked>
+        <label for="image">Image</label>
+        <input type="radio" name="image_video" value='2' id="video">
+        <label for="video">Video</label>
+    </div>
+
+    <div class="file_url">
+        <input type="radio" name="file_url" value='0' id="file" checked>
+        <label for="file">Files</label>
+        <input type="radio" name="file_url" value='1' id="url">
+        <label for="url">Url</label>
+    </div>
+    
+    
+    <input type="submit" value="Submit Files" onclick="SubmitValues()">
+    
+    <script type="text/javascript">
+        function SubmitValues() {
+            selected = document.querySelectorAll('input:checked')
+            value = 0
+            for(i=0; i < selected.length; i++){
+                el = selected[i]
+                value += parseInt(el.value)
+            }
+            window.external.setResult(value);
+            return true;
+        }
+    </script>
+</body>
+</html>
