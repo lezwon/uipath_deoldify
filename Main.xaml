@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1903,10327" sap2010:WorkflowViewState.IdRef="Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sma="clr-namespace:System.Management.Automation;assembly=System.Management.Automation" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1903,11144" sap2010:WorkflowViewState.IdRef="Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sma="clr-namespace:System.Management.Automation;assembly=System.Management.Automation" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -59,9 +59,9 @@
       <AssemblyReference>System.Management.Automation</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1883,10267" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="1883,11084" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Default="https://www.youtube.com/watch?v=5AfCVH4qgjY" Name="url" />
+      <Variable x:TypeArguments="x:String" Default="https://live.staticflickr.com/7001/6810937155_ac9874dde6_o_d.jpg" Name="url" />
       <Variable x:TypeArguments="ui:UiElement" Name="input_field" />
       <Variable x:TypeArguments="ui:UiElement" Name="transfer_sh" />
       <Variable x:TypeArguments="x:String" Name="transfer_url" />
@@ -74,7 +74,7 @@
       <Variable x:TypeArguments="x:Boolean" Default="True" Name="animating" />
       <Variable x:TypeArguments="x:String" Name="result" />
       <Variable x:TypeArguments="x:String" Name="variable1" />
-      <Variable x:TypeArguments="x:Int32" Name="choice" />
+      <Variable x:TypeArguments="x:Int32" Default="1" Name="choice" />
       <Variable x:TypeArguments="x:String" Name="file_path" />
       <Variable x:TypeArguments="njl:JObject" Name="deserialized" />
       <Variable x:TypeArguments="ui:Browser" Name="browser" />
@@ -85,93 +85,131 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CustomInput DisplayName="Custom Input" sap:VirtualizedContainerService.HintSize="1841,88" sap2010:WorkflowViewState.IdRef="CustomInput_1" Result="[result]" URI="index.html" />
-    <Assign sap:VirtualizedContainerService.HintSize="1841,60" sap2010:WorkflowViewState.IdRef="Assign_5">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:Int32">[choice]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:Int32">[Convert.ToInt32(result)]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <ui:GetEnvironmentFolder DisplayName="Get Environment Folder" FolderPath="[user_profile]" sap:VirtualizedContainerService.HintSize="1841,62" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="UserProfile" />
-    <If Condition="[choice Mod 2 = 0]" sap:VirtualizedContainerService.HintSize="1841,526" sap2010:WorkflowViewState.IdRef="If_7">
-      <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,376" sap2010:WorkflowViewState.IdRef="Sequence_62">
-          <Sequence.Variables>
-            <Variable x:TypeArguments="sco:Collection(sma:PSObject)" Name="shell_output" />
-            <Variable x:TypeArguments="x:String" Name="response" />
-          </Sequence.Variables>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1841,256" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,178" sap2010:WorkflowViewState.IdRef="Sequence_77">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:SelectFile Filter="All files (*.*)|*.*" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="SelectFile_4" SelectedFile="[file_path]" />
-          <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseHeaders="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" BodyFormat="application/json" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="HTTP Request" EndPoint="https://file.io/" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" Result="[response]" TimeoutMS="6000">
-            <ui:HttpClient.Attachments>
-              <InArgument x:TypeArguments="x:String" x:Key="file">[file_path]</InArgument>
-            </ui:HttpClient.Attachments>
-            <ui:HttpClient.Cookies>
-              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-            </ui:HttpClient.Cookies>
-            <ui:HttpClient.Headers>
-              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-            </ui:HttpClient.Headers>
-            <ui:HttpClient.Parameters>
-              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-            </ui:HttpClient.Parameters>
-            <ui:HttpClient.UrlSegments>
-              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-            </ui:HttpClient.UrlSegments>
-          </ui:HttpClient>
-          <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_2" JsonObject="[deserialized]" JsonString="[response]" />
-          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+          <ui:CustomInput DisplayName="Custom Input" sap:VirtualizedContainerService.HintSize="334,86" sap2010:WorkflowViewState.IdRef="CustomInput_1" Result="[result]" URI="index.html" />
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1841,230" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_78">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
             <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[url]</OutArgument>
+              <OutArgument x:TypeArguments="x:Int32">[choice]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[deserialized("link").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:Int32">[Convert.ToInt32(result)]</InArgument>
             </Assign.Value>
           </Assign>
         </Sequence>
-      </If.Then>
-      <If.Else>
-        <ui:InputDialog Options="{x:Null}" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Enter url:" Title="Deoldify">
-          <ui:InputDialog.Result>
-            <OutArgument x:TypeArguments="x:String">[url]</OutArgument>
-          </ui:InputDialog.Result>
-        </ui:InputDialog>
-      </If.Else>
-    </If>
-    <If Condition="[choice &gt; 1]" sap:VirtualizedContainerService.HintSize="1841,9180" sap2010:WorkflowViewState.IdRef="If_10">
-      <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="919,9030" sap2010:WorkflowViewState.IdRef="Sequence_65">
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:GetEnvironmentFolder DisplayName="Get Environment Folder" FolderPath="[user_profile]" sap:VirtualizedContainerService.HintSize="1841,61" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="UserProfile" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1841,692" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="797,614" sap2010:WorkflowViewState.IdRef="Sequence_79">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:OpenBrowser BrowserType="Chrome" DisplayName="Open Browser" Hidden="False" sap:VirtualizedContainerService.HintSize="877,4412" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" Private="False" UiBrowser="[browser]" Url="https://colab.research.google.com/github/jantic/DeOldify/blob/master/VideoColorizerColab.ipynb#scrollTo=fbn9RtU1E9Q3">
+          <If Condition="[choice Mod 2 = 0]" sap:VirtualizedContainerService.HintSize="755,522" sap2010:WorkflowViewState.IdRef="If_7">
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="376,375" sap2010:WorkflowViewState.IdRef="Sequence_62">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="sco:Collection(sma:PSObject)" Name="shell_output" />
+                  <Variable x:TypeArguments="x:String" Name="response" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:SelectFile Filter="All files (*.*)|*.*" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="SelectFile_4" SelectedFile="[file_path]" />
+                <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseHeaders="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" BodyFormat="application/json" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="HTTP Request" EndPoint="https://file.io/" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" Result="[response]" TimeoutMS="6000">
+                  <ui:HttpClient.Attachments>
+                    <InArgument x:TypeArguments="x:String" x:Key="file">[file_path]</InArgument>
+                  </ui:HttpClient.Attachments>
+                  <ui:HttpClient.Cookies>
+                    <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                  </ui:HttpClient.Cookies>
+                  <ui:HttpClient.Headers>
+                    <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                  </ui:HttpClient.Headers>
+                  <ui:HttpClient.Parameters>
+                    <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                  </ui:HttpClient.Parameters>
+                  <ui:HttpClient.UrlSegments>
+                    <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                  </ui:HttpClient.UrlSegments>
+                </ui:HttpClient>
+                <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_2" JsonObject="[deserialized]" JsonString="[response]" />
+                <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[url]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[deserialized("link").ToString]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <ui:InputDialog Options="{x:Null}" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Enter url:" Title="Deoldify">
+                <ui:InputDialog.Result>
+                  <OutArgument x:TypeArguments="x:String">[url]</OutArgument>
+                </ui:InputDialog.Result>
+              </ui:InputDialog>
+            </If.Else>
+          </If>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <If Condition="[choice &gt; 1]" sap:VirtualizedContainerService.HintSize="1841,9494" sap2010:WorkflowViewState.IdRef="If_10">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="919,9346" sap2010:WorkflowViewState.IdRef="Sequence_65">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:OpenBrowser BrowserType="Chrome" DisplayName="Open Browser" Hidden="False" sap:VirtualizedContainerService.HintSize="877,4484" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" Private="False" UiBrowser="[browser]" Url="https://colab.research.google.com/github/jantic/DeOldify/blob/master/VideoColorizerColab.ipynb#scrollTo=fbn9RtU1E9Q3">
             <ui:OpenBrowser.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <Sequence sap:VirtualizedContainerService.HintSize="843,4313" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                <Sequence sap:VirtualizedContainerService.HintSize="843,4385" sap2010:WorkflowViewState.IdRef="Sequence_60">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:MaximizeWindow DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="801,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" Window="[browser.Element]" />
-                  <Sequence sap:VirtualizedContainerService.HintSize="801,1440" sap2010:WorkflowViewState.IdRef="Sequence_75">
+                  <Sequence sap:VirtualizedContainerService.HintSize="801,1607" sap2010:WorkflowViewState.IdRef="Sequence_75">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_DOUBLE" DisplayName="Select Input box" sap:VirtualizedContainerService.HintSize="713,106" sap2010:WorkflowViewState.IdRef="Click_47" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                    <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Video url in Input box" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_25" SendWindowMessages="False" SimulateType="False" Text="[url]">
+                      <ui:TypeInto.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="be3b75cd486a7c1e399cf736d0750d00" Selector="&lt;webctrl placeholder='Insert text here' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                      </ui:TypeInto.Target>
+                    </ui:TypeInto>
+                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_DOUBLE" DisplayName="Select cell" sap:VirtualizedContainerService.HintSize="713,106" sap2010:WorkflowViewState.IdRef="Click_70" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                       <ui:Click.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -201,7 +239,7 @@
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="ef1425aeba5dd6087f841ea2e60c712e" Selector="&lt;webctrl parentid='toolbar-add-code' tag='PAPER-BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
                       </ui:Click.Target>
                     </ui:Click>
-                    <If Condition="[choice = 2]" DisplayName="Check if video uploaded or url provided" sap:VirtualizedContainerService.HintSize="713,209" sap2010:WorkflowViewState.IdRef="If_15">
+                    <If Condition="[choice = 2]" DisplayName="Check if video uploaded or url provided" sap:VirtualizedContainerService.HintSize="713,207" sap2010:WorkflowViewState.IdRef="If_15">
                       <If.Then>
                         <ui:SetToClipboard DisplayName="Code to download and process video" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="SetToClipboard_1" Text="[&quot;from pathlib import Path&quot;+ Environment.Newline+ &quot;!wget -O video.mp4 &quot;+ url + Environment.NewLine + &quot;colorizer._colorize_from_path(Path('video.mp4'),21)&quot;]" />
                       </If.Then>
@@ -209,34 +247,34 @@
                         <ui:SetToClipboard DisplayName="Code to process video via url" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="SetToClipboard_2" Text="[&quot;video_path = colorizer.colorize_from_url( '&quot;+ url + &quot;', 'video.mp4', 21)&quot;]" />
                       </If.Else>
                     </If>
-                    <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Paste code from clipboard in cell" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,117" sap2010:WorkflowViewState.IdRef="SendHotkey_9" Key="v" KeyModifiers="Ctrl" SendWindowMessages="False" SpecialKey="False">
+                    <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Paste code from clipboard in cell" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,116" sap2010:WorkflowViewState.IdRef="SendHotkey_9" Key="v" KeyModifiers="Ctrl" SendWindowMessages="False" SpecialKey="False">
                       <ui:SendHotkey.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
                       </ui:SendHotkey.Target>
                     </ui:SendHotkey>
-                    <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Exit typing mode from cell" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,117" sap2010:WorkflowViewState.IdRef="SendHotkey_4" Key="esc" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+                    <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Exit typing mode from cell" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,116" sap2010:WorkflowViewState.IdRef="SendHotkey_4" Key="esc" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
                       <ui:SendHotkey.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
                       </ui:SendHotkey.Target>
                     </ui:SendHotkey>
-                    <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Move to top cell" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,117" sap2010:WorkflowViewState.IdRef="SendHotkey_8" Key="up" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+                    <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Move to top cell" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,116" sap2010:WorkflowViewState.IdRef="SendHotkey_8" Key="up" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
                       <ui:SendHotkey.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
                       </ui:SendHotkey.Target>
                     </ui:SendHotkey>
-                    <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Delete the cell" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,117" sap2010:WorkflowViewState.IdRef="SendHotkey_6" Key="m" KeyModifiers="Ctrl" SendWindowMessages="False" SpecialKey="False">
+                    <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Delete the cell" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,116" sap2010:WorkflowViewState.IdRef="SendHotkey_6" Key="m" KeyModifiers="Ctrl" SendWindowMessages="False" SpecialKey="False">
                       <ui:SendHotkey.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
                       </ui:SendHotkey.Target>
                     </ui:SendHotkey>
                     <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="713,22" sap2010:WorkflowViewState.IdRef="Delay_16" />
-                    <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Delete cell" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,117" sap2010:WorkflowViewState.IdRef="SendHotkey_7" Key="d" KeyModifiers="None" SendWindowMessages="False" SpecialKey="False">
+                    <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Delete cell" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,116" sap2010:WorkflowViewState.IdRef="SendHotkey_7" Key="d" KeyModifiers="None" SendWindowMessages="False" SpecialKey="False">
                       <ui:SendHotkey.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
                       </ui:SendHotkey.Target>
                     </ui:SendHotkey>
                   </Sequence>
-                  <Sequence sap:VirtualizedContainerService.HintSize="801,2679" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence sap:VirtualizedContainerService.HintSize="801,2584" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -262,26 +300,12 @@
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
                       </ui:TypeInto.Target>
                     </ui:TypeInto>
-                    <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Execute all cells" EmptyField="False" sap:VirtualizedContainerService.HintSize="759,117" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="f9" KeyModifiers="Ctrl" SendWindowMessages="False" SpecialKey="True">
+                    <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Execute all cells" EmptyField="False" sap:VirtualizedContainerService.HintSize="759,116" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="f9" KeyModifiers="Ctrl" SendWindowMessages="False" SpecialKey="True">
                       <ui:SendHotkey.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
                       </ui:SendHotkey.Target>
                     </ui:SendHotkey>
-                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Uncheck reset all runtimes" sap:VirtualizedContainerService.HintSize="759,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
-                      <ui:Click.CursorPosition>
-                        <ui:CursorPosition Position="Center">
-                          <ui:CursorPosition.OffsetX>
-                            <InArgument x:TypeArguments="x:Int32" />
-                          </ui:CursorPosition.OffsetX>
-                          <ui:CursorPosition.OffsetY>
-                            <InArgument x:TypeArguments="x:Int32" />
-                          </ui:CursorPosition.OffsetY>
-                        </ui:CursorPosition>
-                      </ui:Click.CursorPosition>
-                      <ui:Click.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="f593a1369fcbb8f37030d8532f78685f" Selector="&lt;webctrl css-selector='body&amp;gt;colab-dialog&amp;gt;paper-dialog&amp;gt;div&amp;gt;div&amp;gt;paper-checkbox&amp;gt;div' id='checkboxLabel' tag='DIV' /&gt;" WaitForReady="INTERACTIVE" />
-                      </ui:Click.Target>
-                    </ui:Click>
+                    <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="759,22" sap2010:WorkflowViewState.IdRef="Delay_22" />
                     <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click RUN ANYWAY" sap:VirtualizedContainerService.HintSize="759,106" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                       <ui:Click.CursorPosition>
                         <ui:CursorPosition Position="Center">
@@ -307,36 +331,36 @@
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="fe0118dd37125093f9de02053878f3e7" Selector="&lt;webctrl omit:aaname='[ ]        ' css-selector='div.focused.execution-error' omit:parentid='cell-tzHVnegp21hC' tag='DIV' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
                       </ui:UiElementExists.Target>
                     </ui:UiElementExists>
-                    <If Condition="[animating = True]" sap:VirtualizedContainerService.HintSize="759,1583" sap2010:WorkflowViewState.IdRef="If_5">
+                    <If Condition="[animating = True]" sap:VirtualizedContainerService.HintSize="759,1573" sap2010:WorkflowViewState.IdRef="If_5">
                       <If.Then>
-                        <Sequence DisplayName="Re run processing" sap:VirtualizedContainerService.HintSize="614,1434" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                        <Sequence DisplayName="Re run processing" sap:VirtualizedContainerService.HintSize="614,1426" sap2010:WorkflowViewState.IdRef="Sequence_59">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Move to top cell" EmptyField="False" sap:VirtualizedContainerService.HintSize="572,117" sap2010:WorkflowViewState.IdRef="SendHotkey_38" Key="up" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+                          <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Move to top cell" EmptyField="False" sap:VirtualizedContainerService.HintSize="572,116" sap2010:WorkflowViewState.IdRef="SendHotkey_38" Key="up" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
                             <ui:SendHotkey.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
                             </ui:SendHotkey.Target>
                           </ui:SendHotkey>
-                          <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Move to top cell" EmptyField="False" sap:VirtualizedContainerService.HintSize="572,117" sap2010:WorkflowViewState.IdRef="SendHotkey_39" Key="up" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+                          <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Move to top cell" EmptyField="False" sap:VirtualizedContainerService.HintSize="572,116" sap2010:WorkflowViewState.IdRef="SendHotkey_39" Key="up" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
                             <ui:SendHotkey.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
                             </ui:SendHotkey.Target>
                           </ui:SendHotkey>
-                          <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Run cell" EmptyField="False" sap:VirtualizedContainerService.HintSize="572,117" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="enter" KeyModifiers="Shift" SendWindowMessages="False" SpecialKey="True">
+                          <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Run cell" EmptyField="False" sap:VirtualizedContainerService.HintSize="572,116" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="enter" KeyModifiers="Shift" SendWindowMessages="False" SpecialKey="True">
                             <ui:SendHotkey.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
                             </ui:SendHotkey.Target>
                           </ui:SendHotkey>
-                          <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Move to top cell" EmptyField="False" sap:VirtualizedContainerService.HintSize="572,117" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="up" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+                          <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Move to top cell" EmptyField="False" sap:VirtualizedContainerService.HintSize="572,116" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="up" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
                             <ui:SendHotkey.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
                             </ui:SendHotkey.Target>
                           </ui:SendHotkey>
-                          <While DisplayName="Wait for highlighted cell processing to finish" sap:VirtualizedContainerService.HintSize="572,714" sap2010:WorkflowViewState.IdRef="While_8" Condition="[animating = True]">
-                            <Sequence DisplayName="Check if processing complete every 5 secs" sap:VirtualizedContainerService.HintSize="526,555" sap2010:WorkflowViewState.IdRef="Sequence_76">
+                          <While DisplayName="Wait for highlighted cell processing to finish" sap:VirtualizedContainerService.HintSize="572,710" sap2010:WorkflowViewState.IdRef="While_8" Condition="[animating = True]">
+                            <Sequence DisplayName="Check if processing complete every 5 secs" sap:VirtualizedContainerService.HintSize="526,553" sap2010:WorkflowViewState.IdRef="Sequence_76">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -348,7 +372,7 @@
                                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="a0eeb0b41efbbde3e908531c016bab32" Selector="&lt;webctrl omit:aaname='[ ]        ' css-selector='div.focused.pending' omit:parentid='cell-tzHVnegp21hC' tag='DIV' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
                                 </ui:UiElementExists.Target>
                               </ui:UiElementExists>
-                              <If Condition="[animating = False]" sap:VirtualizedContainerService.HintSize="484,255" sap2010:WorkflowViewState.IdRef="If_16">
+                              <If Condition="[animating = False]" sap:VirtualizedContainerService.HintSize="484,253" sap2010:WorkflowViewState.IdRef="If_16">
                                 <If.Then>
                                   <ui:UiElementExists DisplayName="If processing running" Exists="[animating]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_19">
                                     <ui:UiElementExists.Target>
@@ -367,25 +391,25 @@
               </ActivityAction>
             </ui:OpenBrowser.Body>
           </ui:OpenBrowser>
-          <Sequence DisplayName="Native Citrix" sap:VirtualizedContainerService.HintSize="877,4159" sap2010:WorkflowViewState.IdRef="Sequence_18">
+          <Sequence DisplayName="Native Citrix" sap:VirtualizedContainerService.HintSize="877,4403" sap2010:WorkflowViewState.IdRef="Sequence_18">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="572,3435" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="dc499fa9444684e8c739512a5b978f33" Selector="&lt;html app='chrome.exe' title='VideoColorizerColab.ipynb - Colaboratory' /&gt;" UiBrowser="[browser]">
+            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="602,3679" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="dc499fa9444684e8c739512a5b978f33" Selector="&lt;html app='chrome.exe' title='VideoColorizerColab.ipynb - Colaboratory' /&gt;" UiBrowser="[browser]">
               <ui:BrowserScope.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                   </ActivityAction.Argument>
-                  <Sequence sap:VirtualizedContainerService.HintSize="526,3289" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                  <Sequence sap:VirtualizedContainerService.HintSize="568,3533" sap2010:WorkflowViewState.IdRef="Sequence_23">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484,751" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,998" sap2010:WorkflowViewState.IdRef="Sequence_17">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="menu_items" />
                         <Variable x:TypeArguments="x:String" Name="fileio_json" />
@@ -395,17 +419,17 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:WaitUiElementAppear FoundElement="{x:Null}" DisplayName="Find output of curl response" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_3" WaitActive="False" WaitVisible="False">
+                      <ui:WaitUiElementAppear FoundElement="{x:Null}" DisplayName="Find output of curl response" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_3" WaitActive="False" WaitVisible="False">
                         <ui:WaitUiElementAppear.Target>
                           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="dbe94d9bf65e133f562d8bac79bb78c2" Selector="&lt;webctrl omit:aaname='[ ]        ' css-selector='div.focused iframe' omit:parentid='cell-tzHVnegp21hC' tag='IFRAME' /&gt;" WaitForReady="INTERACTIVE" />
                         </ui:WaitUiElementAppear.Target>
                       </ui:WaitUiElementAppear>
-                      <ui:FindChildren Children="[menu_items]" DisplayName="Get Iframe" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
+                      <ui:FindChildren Children="[menu_items]" DisplayName="Get Iframe" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
                         <ui:FindChildren.Target>
                           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0592f5a4227a862c9db28b78d8374e54" Selector="&lt;webctrl omit:aaname='[ ]        ' css-selector='div.focused iframe' omit:parentid='cell-tzHVnegp21hC' tag='IFRAME' /&gt;" WaitForReady="INTERACTIVE" />
                         </ui:FindChildren.Target>
                       </ui:FindChildren>
-                      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                      <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_3">
                         <Assign.To>
                           <OutArgument x:TypeArguments="ui:UiElement[]">[iframe_array]</OutArgument>
                         </Assign.To>
@@ -413,7 +437,7 @@
                           <InArgument x:TypeArguments="ui:UiElement[]">[menu_items.ToArray]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get json form output frame" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="GetValue_2">
+                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get json form output frame" sap:VirtualizedContainerService.HintSize="484,68" sap2010:WorkflowViewState.IdRef="GetValue_2">
                         <ui:GetValue.Target>
                           <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" Element="[iframe_array(1)]" WaitForReady="INTERACTIVE" />
                         </ui:GetValue.Target>
@@ -421,8 +445,20 @@
                           <OutArgument x:TypeArguments="x:String">[fileio_json]</OutArgument>
                         </ui:GetValue.Value>
                       </ui:GetValue>
-                      <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[deserialized]" JsonString="[fileio_json]" />
-                      <Assign DisplayName="Get output URL" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                      <If Condition="[fileio_json = &quot; &quot;]" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_17">
+                        <If.Then>
+                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[fileio_json]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[menu_items.ElementAt(1).Get("innertext").ToString]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </If.Then>
+                      </If>
+                      <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="484,59" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[deserialized]" JsonString="[fileio_json]" />
+                      <Assign DisplayName="Get output URL" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[transfer_url]</OutArgument>
                         </Assign.To>
@@ -431,7 +467,7 @@
                         </Assign.Value>
                       </Assign>
                     </Sequence>
-                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Runtime Button" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="Click_58" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Runtime Button" sap:VirtualizedContainerService.HintSize="526,106" sap2010:WorkflowViewState.IdRef="Click_58" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                       <ui:Click.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -446,7 +482,7 @@
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="a5ad1eea882cde20ad75f10fe698d86b" Selector="&lt;webctrl aaname='Runtime' parentid='runtime-menu-button' tag='DIV' /&gt;" WaitForReady="INTERACTIVE" />
                       </ui:Click.Target>
                     </ui:Click>
-                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Manage Sessions" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="Click_59" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Manage Sessions" sap:VirtualizedContainerService.HintSize="526,106" sap2010:WorkflowViewState.IdRef="Click_59" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                       <ui:Click.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -458,10 +494,10 @@
                         </ui:CursorPosition>
                       </ui:Click.CursorPosition>
                       <ui:Click.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="12ec2cc769cb29736def79b8d2da6dc8" Selector="&lt;webctrl parentid=':23' tag='DIV' /&gt;" WaitForReady="INTERACTIVE" />
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="369a796ad7b1f4ab8d32d68f87800479" Selector="&lt;webctrl tag='DIV' aaname='Manage sessions' idx='1' /&gt;" WaitForReady="INTERACTIVE" />
                       </ui:Click.Target>
                     </ui:Click>
-                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Terminate" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="Click_60" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Terminate" sap:VirtualizedContainerService.HintSize="526,106" sap2010:WorkflowViewState.IdRef="Click_60" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                       <ui:Click.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -476,7 +512,7 @@
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="55592239ff5dfe014411ebc49d49bc8b" Selector="&lt;webctrl tag='COLAB-SESSION' /&gt;&lt;webctrl isleaf='1' parentid='scrollable' tag='PAPER-BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
                       </ui:Click.Target>
                     </ui:Click>
-                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click OK" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="Click_61" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click OK" sap:VirtualizedContainerService.HintSize="526,106" sap2010:WorkflowViewState.IdRef="Click_61" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                       <ui:Click.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -491,19 +527,19 @@
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="4d9377a83f13abc47c833690a180eb57" Selector="&lt;webctrl id='ok' tag='PAPER-BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
                       </ui:Click.Target>
                     </ui:Click>
-                    <ui:NavigateTo Browser="[browser]" ContinueOnError="True" DisplayName="Navigate To Output" sap:VirtualizedContainerService.HintSize="484,59" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="[transfer_url]" />
-                    <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Force Leave Page" EmptyField="False" sap:VirtualizedContainerService.HintSize="484,117" sap2010:WorkflowViewState.IdRef="SendHotkey_37" Key="enter" KeyModifiers="Alt, Ctrl, Shift, Win" SendWindowMessages="False" SpecialKey="True">
+                    <ui:NavigateTo Browser="[browser]" ContinueOnError="True" DisplayName="Navigate To Output" sap:VirtualizedContainerService.HintSize="526,59" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="[transfer_url]" />
+                    <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Force Leave Page" EmptyField="False" sap:VirtualizedContainerService.HintSize="526,116" sap2010:WorkflowViewState.IdRef="SendHotkey_37" Key="enter" KeyModifiers="Alt, Ctrl, Shift, Win" SendWindowMessages="False" SpecialKey="True">
                       <ui:SendHotkey.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="100" WaitForReady="INTERACTIVE" />
                       </ui:SendHotkey.Target>
                     </ui:SendHotkey>
-                    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'SaveAs Dialog'" sap:VirtualizedContainerService.HintSize="484,1125" sap2010:WorkflowViewState.IdRef="WindowScope_2" Selector="&lt;wnd app='chrome.exe' cls='#32770' title='Save As' /&gt;">
+                    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'SaveAs Dialog'" sap:VirtualizedContainerService.HintSize="484,1123" sap2010:WorkflowViewState.IdRef="WindowScope_2" Selector="&lt;wnd app='chrome.exe' cls='#32770' title='Save As' /&gt;">
                       <ui:WindowScope.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1017" sap2010:WorkflowViewState.IdRef="Sequence_74">
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1015" sap2010:WorkflowViewState.IdRef="Sequence_74">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -514,12 +550,12 @@
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6c7f0f12c1a9bc8b04b8313209c13883" Selector="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" WaitForReady="INTERACTIVE" />
                               </ui:TypeInto.Target>
                             </ui:TypeInto>
-                            <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Change directory" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,117" sap2010:WorkflowViewState.IdRef="SendHotkey_34" Key="f4" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+                            <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Change directory" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_34" Key="f4" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
                               <ui:SendHotkey.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
                               </ui:SendHotkey.Target>
                             </ui:SendHotkey>
-                            <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Change directory" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,117" sap2010:WorkflowViewState.IdRef="SendHotkey_35" Key="a" KeyModifiers="Ctrl" SendWindowMessages="False" SpecialKey="False">
+                            <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Change directory" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_35" Key="a" KeyModifiers="Ctrl" SendWindowMessages="False" SpecialKey="False">
                               <ui:SendHotkey.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
                               </ui:SendHotkey.Target>
@@ -604,19 +640,19 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="877,6364" sap2010:WorkflowViewState.IdRef="Sequence_68">
+        <Sequence sap:VirtualizedContainerService.HintSize="877,6637" sap2010:WorkflowViewState.IdRef="Sequence_68">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:OpenBrowser BrowserType="Chrome" DisplayName="Open Browser" Hidden="False" sap:VirtualizedContainerService.HintSize="835,6210" sap2010:WorkflowViewState.IdRef="OpenBrowser_4" NewSession="True" Private="False" UiBrowser="[browser]" Url="https://colab.research.google.com/github/jantic/DeOldify/blob/master/ImageColorizerColab.ipynb">
+          <ui:OpenBrowser BrowserType="Chrome" DisplayName="Open Browser" Hidden="False" sap:VirtualizedContainerService.HintSize="835,6483" sap2010:WorkflowViewState.IdRef="OpenBrowser_4" NewSession="True" Private="False" UiBrowser="[browser]" Url="https://colab.research.google.com/github/jantic/DeOldify/blob/master/ImageColorizerColab.ipynb">
             <ui:OpenBrowser.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="801,6111" sap2010:WorkflowViewState.IdRef="Sequence_67">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="801,6384" sap2010:WorkflowViewState.IdRef="Sequence_67">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="variable2" />
                     <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="iframe_items" />
@@ -671,26 +707,12 @@
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
                     </ui:TypeInto.Target>
                   </ui:TypeInto>
-                  <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Execute all cells" EmptyField="False" sap:VirtualizedContainerService.HintSize="759,117" sap2010:WorkflowViewState.IdRef="SendHotkey_10" Key="f9" KeyModifiers="Ctrl" SendWindowMessages="False" SpecialKey="True">
+                  <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Execute all cells" EmptyField="False" sap:VirtualizedContainerService.HintSize="759,116" sap2010:WorkflowViewState.IdRef="SendHotkey_10" Key="f9" KeyModifiers="Ctrl" SendWindowMessages="False" SpecialKey="True">
                     <ui:SendHotkey.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
                     </ui:SendHotkey.Target>
                   </ui:SendHotkey>
-                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Uncheck reset all runtimes" sap:VirtualizedContainerService.HintSize="759,106" sap2010:WorkflowViewState.IdRef="Click_49" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
-                    <ui:Click.CursorPosition>
-                      <ui:CursorPosition Position="Center">
-                        <ui:CursorPosition.OffsetX>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:CursorPosition.OffsetX>
-                        <ui:CursorPosition.OffsetY>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:CursorPosition.OffsetY>
-                      </ui:CursorPosition>
-                    </ui:Click.CursorPosition>
-                    <ui:Click.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="f593a1369fcbb8f37030d8532f78685f" Selector="&lt;webctrl css-selector='body&amp;gt;colab-dialog&amp;gt;paper-dialog&amp;gt;div&amp;gt;div&amp;gt;paper-checkbox&amp;gt;div' id='checkboxLabel' tag='DIV' /&gt;" WaitForReady="INTERACTIVE" />
-                    </ui:Click.Target>
-                  </ui:Click>
+                  <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="759,22" sap2010:WorkflowViewState.IdRef="Delay_18" />
                   <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click RUN ANYWAY" sap:VirtualizedContainerService.HintSize="759,106" sap2010:WorkflowViewState.IdRef="Click_50" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                     <ui:Click.CursorPosition>
                       <ui:CursorPosition Position="Center">
@@ -703,7 +725,7 @@
                       </ui:CursorPosition>
                     </ui:Click.CursorPosition>
                     <ui:Click.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0d4a0528627e9353cc50b65080ac13d4" Selector="&lt;webctrl id='ok' tag='PAPER-BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="69c8c85e066fee7d18467686bb750778" Selector="&lt;webctrl id='ok' tag='PAPER-BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
                     </ui:Click.Target>
                   </ui:Click>
                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke processing_workflow workflow" sap:VirtualizedContainerService.HintSize="759,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="processing_workflow.xaml">
@@ -716,26 +738,26 @@
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="fe0118dd37125093f9de02053878f3e7" Selector="&lt;webctrl omit:aaname='[ ]        ' css-selector='div.focused.execution-error' omit:parentid='cell-tzHVnegp21hC' tag='DIV' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <If Condition="[animating = True]" sap:VirtualizedContainerService.HintSize="759,1269" sap2010:WorkflowViewState.IdRef="If_14">
+                  <If Condition="[animating = True]" sap:VirtualizedContainerService.HintSize="759,1261" sap2010:WorkflowViewState.IdRef="If_14">
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="614,1120" sap2010:WorkflowViewState.IdRef="Sequence_71">
+                      <Sequence sap:VirtualizedContainerService.HintSize="614,1114" sap2010:WorkflowViewState.IdRef="Sequence_71">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey" EmptyField="False" sap:VirtualizedContainerService.HintSize="572,117" sap2010:WorkflowViewState.IdRef="SendHotkey_19" Key="enter" KeyModifiers="Shift" SendWindowMessages="False" SpecialKey="True">
+                        <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey" EmptyField="False" sap:VirtualizedContainerService.HintSize="572,116" sap2010:WorkflowViewState.IdRef="SendHotkey_19" Key="enter" KeyModifiers="Shift" SendWindowMessages="False" SpecialKey="True">
                           <ui:SendHotkey.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
                           </ui:SendHotkey.Target>
                         </ui:SendHotkey>
-                        <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey" EmptyField="False" sap:VirtualizedContainerService.HintSize="572,117" sap2010:WorkflowViewState.IdRef="SendHotkey_20" Key="up" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+                        <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey" EmptyField="False" sap:VirtualizedContainerService.HintSize="572,116" sap2010:WorkflowViewState.IdRef="SendHotkey_20" Key="up" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
                           <ui:SendHotkey.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
                           </ui:SendHotkey.Target>
                         </ui:SendHotkey>
-                        <While DisplayName="Check if processing complete every 5 secs" sap:VirtualizedContainerService.HintSize="572,714" sap2010:WorkflowViewState.IdRef="While_7" Condition="[animating = True]">
-                          <Sequence DisplayName="Check if processing complete every 5 secs" sap:VirtualizedContainerService.HintSize="526,555" sap2010:WorkflowViewState.IdRef="Sequence_70">
+                        <While DisplayName="Check if processing complete every 5 secs" sap:VirtualizedContainerService.HintSize="572,710" sap2010:WorkflowViewState.IdRef="While_7" Condition="[animating = True]">
+                          <Sequence DisplayName="Check if processing complete every 5 secs" sap:VirtualizedContainerService.HintSize="526,553" sap2010:WorkflowViewState.IdRef="Sequence_70">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -747,7 +769,7 @@
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="a0eeb0b41efbbde3e908531c016bab32" Selector="&lt;webctrl omit:aaname='[ ]        ' css-selector='div.focused.pending' omit:parentid='cell-tzHVnegp21hC' tag='DIV' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
                               </ui:UiElementExists.Target>
                             </ui:UiElementExists>
-                            <If Condition="[animating = False]" sap:VirtualizedContainerService.HintSize="484,255" sap2010:WorkflowViewState.IdRef="If_13">
+                            <If Condition="[animating = False]" sap:VirtualizedContainerService.HintSize="484,253" sap2010:WorkflowViewState.IdRef="If_13">
                               <If.Then>
                                 <ui:UiElementExists DisplayName="If processing running" Exists="[animating]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_17">
                                   <ui:UiElementExists.Target>
@@ -766,11 +788,13 @@
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="dbe94d9bf65e133f562d8bac79bb78c2" Selector="&lt;webctrl omit:aaname='[ ]        ' css-selector='div.focused iframe' omit:parentid='cell-tzHVnegp21hC' tag='IFRAME' /&gt;" WaitForReady="INTERACTIVE" />
                     </ui:WaitUiElementAppear.Target>
                   </ui:WaitUiElementAppear>
+                  <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="759,22" sap2010:WorkflowViewState.IdRef="Delay_20" />
                   <ui:FindChildren Children="[menu_items]" DisplayName="Get Iframe" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="759,106" sap2010:WorkflowViewState.IdRef="FindChildren_2" Scope="FIND_CHILDREN">
                     <ui:FindChildren.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0592f5a4227a862c9db28b78d8374e54" Selector="&lt;webctrl omit:aaname='[ ]        ' css-selector='div.focused iframe' omit:parentid='cell-tzHVnegp21hC' tag='IFRAME' /&gt;" WaitForReady="INTERACTIVE" />
                     </ui:FindChildren.Target>
                   </ui:FindChildren>
+                  <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="759,22" sap2010:WorkflowViewState.IdRef="Delay_21" />
                   <Assign sap:VirtualizedContainerService.HintSize="759,60" sap2010:WorkflowViewState.IdRef="Assign_7">
                     <Assign.To>
                       <OutArgument x:TypeArguments="ui:UiElement[]">[iframe_array]</OutArgument>
@@ -787,6 +811,18 @@
                       <OutArgument x:TypeArguments="x:String">[fileio_json]</OutArgument>
                     </ui:GetValue.Value>
                   </ui:GetValue>
+                  <If Condition="[fileio_json = &quot; &quot;]" sap:VirtualizedContainerService.HintSize="759,207" sap2010:WorkflowViewState.IdRef="If_18">
+                    <If.Then>
+                      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[fileio_json]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[menu_items.ElementAt(1).Get("aaname").ToString]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </If.Then>
+                  </If>
                   <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="759,59" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_3" JsonObject="[deserialized]" JsonString="[fileio_json]" />
                   <Assign DisplayName="Get output URL" sap:VirtualizedContainerService.HintSize="759,60" sap2010:WorkflowViewState.IdRef="Assign_8">
                     <Assign.To>
@@ -823,7 +859,7 @@
                       </ui:CursorPosition>
                     </ui:Click.CursorPosition>
                     <ui:Click.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="12ec2cc769cb29736def79b8d2da6dc8" Selector="&lt;webctrl parentid=':23' tag='DIV' /&gt;" WaitForReady="INTERACTIVE" />
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="ae812aa6b45052ae64fbb2c3194bca7a" Selector="&lt;webctrl id=':24' tag='DIV' /&gt;" WaitForReady="INTERACTIVE" />
                     </ui:Click.Target>
                   </ui:Click>
                   <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Terminate" sap:VirtualizedContainerService.HintSize="759,106" sap2010:WorkflowViewState.IdRef="Click_64" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
@@ -857,24 +893,24 @@
                     </ui:Click.Target>
                   </ui:Click>
                   <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Output" sap:VirtualizedContainerService.HintSize="759,59" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[transfer_url]" />
-                  <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Force Leave Page" EmptyField="False" sap:VirtualizedContainerService.HintSize="759,117" sap2010:WorkflowViewState.IdRef="SendHotkey_13" Key="enter" KeyModifiers="Alt, Ctrl, Shift, Win" SendWindowMessages="False" SpecialKey="True">
+                  <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Force Leave Page" EmptyField="False" sap:VirtualizedContainerService.HintSize="759,116" sap2010:WorkflowViewState.IdRef="SendHotkey_13" Key="enter" KeyModifiers="Alt, Ctrl, Shift, Win" SendWindowMessages="False" SpecialKey="True">
                     <ui:SendHotkey.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="100" WaitForReady="INTERACTIVE" />
                     </ui:SendHotkey.Target>
                   </ui:SendHotkey>
                   <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="759,22" sap2010:WorkflowViewState.IdRef="Delay_9" />
-                  <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Save Image" EmptyField="False" sap:VirtualizedContainerService.HintSize="759,117" sap2010:WorkflowViewState.IdRef="SendHotkey_11" Key="s" KeyModifiers="Ctrl" SendWindowMessages="False" SpecialKey="False">
+                  <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Save Image" EmptyField="False" sap:VirtualizedContainerService.HintSize="759,116" sap2010:WorkflowViewState.IdRef="SendHotkey_11" Key="s" KeyModifiers="Ctrl" SendWindowMessages="False" SpecialKey="False">
                     <ui:SendHotkey.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
                     </ui:SendHotkey.Target>
                   </ui:SendHotkey>
-                  <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'SaveAs Dialog'" sap:VirtualizedContainerService.HintSize="759,1125" sap2010:WorkflowViewState.IdRef="WindowScope_1" Selector="&lt;wnd app='chrome.exe' cls='#32770' title='Save As' /&gt;">
+                  <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'SaveAs Dialog'" sap:VirtualizedContainerService.HintSize="759,1122" sap2010:WorkflowViewState.IdRef="WindowScope_1" Selector="&lt;wnd app='chrome.exe' cls='#32770' title='Save As' /&gt;">
                     <ui:WindowScope.Body>
                       <ActivityAction x:TypeArguments="x:Object">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1017" sap2010:WorkflowViewState.IdRef="Sequence_73">
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1014" sap2010:WorkflowViewState.IdRef="Sequence_73">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -885,12 +921,12 @@
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6c7f0f12c1a9bc8b04b8313209c13883" Selector="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" WaitForReady="INTERACTIVE" />
                             </ui:TypeInto.Target>
                           </ui:TypeInto>
-                          <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Change directory" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,117" sap2010:WorkflowViewState.IdRef="SendHotkey_31" Key="f4" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+                          <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Change directory" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_31" Key="f4" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
                             <ui:SendHotkey.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
                             </ui:SendHotkey.Target>
                           </ui:SendHotkey>
-                          <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Change directory" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,117" sap2010:WorkflowViewState.IdRef="SendHotkey_32" Key="a" KeyModifiers="Ctrl" SendWindowMessages="False" SpecialKey="False">
+                          <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Change directory" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_32" Key="a" KeyModifiers="Ctrl" SendWindowMessages="False" SpecialKey="False">
                             <ui:SendHotkey.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
                             </ui:SendHotkey.Target>
@@ -900,7 +936,7 @@
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="3fb196c2704370cf54463766e460e0fc" Selector="&lt;wnd ctrlid='41477' /&gt;" WaitForReady="INTERACTIVE" />
                             </ui:TypeInto.Target>
                           </ui:TypeInto>
-                          <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Press Enter" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,117" sap2010:WorkflowViewState.IdRef="SendHotkey_33" Key="enter" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+                          <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Press Enter" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_33" Key="enter" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
                             <ui:SendHotkey.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;wnd ctrlid='41477' /&gt;" WaitForReady="INTERACTIVE" />
                             </ui:SendHotkey.Target>
