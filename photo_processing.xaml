@@ -30,7 +30,7 @@
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="877,5031" sap2010:WorkflowViewState.IdRef="Sequence_74">
+  <Sequence DisplayName="Photo Processing" sap:VirtualizedContainerService.HintSize="877,5031" sap2010:WorkflowViewState.IdRef="Sequence_74">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:Browser" Name="browser" />
     </Sequence.Variables>
@@ -45,7 +45,7 @@
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence sap:VirtualizedContainerService.HintSize="801,4684" sap2010:WorkflowViewState.IdRef="Sequence_76">
+          <Sequence DisplayName="Process photo in colab" sap:VirtualizedContainerService.HintSize="801,4684" sap2010:WorkflowViewState.IdRef="Sequence_76">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Default="True" Name="animating" />
               <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="iframe_children" />
@@ -59,10 +59,15 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:MaximizeWindow DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="759,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_2" Window="[browser.Element]" />
-            <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Photo url in Input box" EmptyField="False" sap:VirtualizedContainerService.HintSize="759,134" sap2010:WorkflowViewState.IdRef="TypeInto_12" SendWindowMessages="False" SimulateType="False" Text="[url]">
+            <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" sap2010:Annotation.AnnotationText="Type image url in input box" ClickBeforeTyping="False" DisplayName="Type Photo url in Input box" EmptyField="False" sap:VirtualizedContainerService.HintSize="759,134" sap2010:WorkflowViewState.IdRef="TypeInto_12" SendWindowMessages="False" SimulateType="False" Text="[url]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="be3b75cd486a7c1e399cf736d0750d00" Selector="&lt;webctrl placeholder='Insert text here' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
               </ui:TypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ui:TypeInto>
             <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_DOUBLE" DisplayName="Select cell" sap:VirtualizedContainerService.HintSize="759,106" sap2010:WorkflowViewState.IdRef="Click_51" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
               <ui:Click.CursorPosition>
@@ -79,7 +84,7 @@
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="aa342539b561fa0395404fa9013ca8ce" Selector="&lt;webctrl parentid='input-2' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
               </ui:Click.Target>
             </ui:Click>
-            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Add Code Textbox" sap:VirtualizedContainerService.HintSize="759,106" sap2010:WorkflowViewState.IdRef="Click_57" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" sap2010:Annotation.AnnotationText="add new code below current textbox" ClickType="CLICK_SINGLE" DisplayName="Add Code Textbox" sap:VirtualizedContainerService.HintSize="759,106" sap2010:WorkflowViewState.IdRef="Click_57" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -93,11 +98,21 @@
               <ui:Click.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="ef1425aeba5dd6087f841ea2e60c712e" Selector="&lt;webctrl parentid='toolbar-add-code' tag='PAPER-BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
               </ui:Click.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ui:Click>
-            <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type in code to upload video to file.io" EmptyField="False" sap:VirtualizedContainerService.HintSize="759,96" sap2010:WorkflowViewState.IdRef="TypeInto_14" SendWindowMessages="False" SimulateType="False" Text="!curl -F 'file=@result_images/image.png' https://file.io">
+            <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" sap2010:Annotation.AnnotationText="code to upload image to file.io once done" ClickBeforeTyping="False" DisplayName="Type in code to upload video to file.io" EmptyField="False" sap:VirtualizedContainerService.HintSize="759,96" sap2010:WorkflowViewState.IdRef="TypeInto_14" SendWindowMessages="False" SimulateType="False" Text="!curl -F 'file=@result_images/image.png' https://file.io">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
               </ui:TypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ui:TypeInto>
             <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Execute all cells" EmptyField="False" sap:VirtualizedContainerService.HintSize="759,116" sap2010:WorkflowViewState.IdRef="SendHotkey_10" Key="f9" KeyModifiers="Ctrl" SendWindowMessages="False" SpecialKey="True">
               <ui:SendHotkey.Target>
@@ -105,7 +120,7 @@
               </ui:SendHotkey.Target>
             </ui:SendHotkey>
             <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="759,22" sap2010:WorkflowViewState.IdRef="Delay_18" />
-            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click RUN ANYWAY" sap:VirtualizedContainerService.HintSize="759,106" sap2010:WorkflowViewState.IdRef="Click_50" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" sap2010:Annotation.AnnotationText="execute all cells" ClickType="CLICK_SINGLE" DisplayName="Click RUN ANYWAY" sap:VirtualizedContainerService.HintSize="759,106" sap2010:WorkflowViewState.IdRef="Click_50" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -119,12 +134,18 @@
               <ui:Click.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="69c8c85e066fee7d18467686bb750778" Selector="&lt;webctrl id='ok' tag='PAPER-BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
               </ui:Click.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ui:Click>
             <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="759,22" sap2010:WorkflowViewState.IdRef="Delay_23" />
-            <While DisplayName="Wait for highlighted cell processing to finish" sap:VirtualizedContainerService.HintSize="759,710" sap2010:WorkflowViewState.IdRef="While_8">
+            <While sap2010:Annotation.AnnotationText="check class on focused cell to see if processing over" DisplayName="Wait for highlighted cell processing to finish" sap:VirtualizedContainerService.HintSize="759,710" sap2010:WorkflowViewState.IdRef="While_8">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <While.Condition>[animating = True]</While.Condition>
@@ -151,14 +172,19 @@
                 </If>
               </Sequence>
             </While>
-            <ui:UiElementExists DisplayName="Element Exists 'IRON-ICON  icon'" Exists="[animating]" sap:VirtualizedContainerService.HintSize="759,106" sap2010:WorkflowViewState.IdRef="UiElementExists_15">
+            <ui:UiElementExists DisplayName="Check if processing errored out" Exists="[animating]" sap:VirtualizedContainerService.HintSize="759,106" sap2010:WorkflowViewState.IdRef="UiElementExists_15">
               <ui:UiElementExists.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="fe0118dd37125093f9de02053878f3e7" Selector="&lt;webctrl omit:aaname='[ ]        ' css-selector='div.focused.execution-error' omit:parentid='cell-tzHVnegp21hC' tag='DIV' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
               </ui:UiElementExists.Target>
             </ui:UiElementExists>
-            <If Condition="[animating = True]" sap:VirtualizedContainerService.HintSize="759,1261" sap2010:WorkflowViewState.IdRef="If_14">
+            <If sap2010:Annotation.AnnotationText="rereun processing if it errored out" Condition="[animating = True]" sap:VirtualizedContainerService.HintSize="759,1261" sap2010:WorkflowViewState.IdRef="If_14">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="614,1114" sap2010:WorkflowViewState.IdRef="Sequence_71">
+                <Sequence DisplayName="Rerun processing if errored" sap:VirtualizedContainerService.HintSize="614,1114" sap2010:WorkflowViewState.IdRef="Sequence_71">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -201,15 +227,25 @@
                 </Sequence>
               </If.Then>
             </If>
-            <ui:WaitUiElementAppear FoundElement="{x:Null}" DisplayName="Find output of curl response" sap:VirtualizedContainerService.HintSize="759,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_4" WaitActive="False" WaitVisible="False">
+            <ui:WaitUiElementAppear FoundElement="{x:Null}" sap2010:Annotation.AnnotationText="Wait for json response to appear" DisplayName="Find output of curl response" sap:VirtualizedContainerService.HintSize="759,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_4" WaitActive="False" WaitVisible="False">
               <ui:WaitUiElementAppear.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="dbe94d9bf65e133f562d8bac79bb78c2" Selector="&lt;webctrl omit:aaname='[ ]        ' css-selector='div.focused iframe' omit:parentid='cell-tzHVnegp21hC' tag='IFRAME' /&gt;" WaitForReady="INTERACTIVE" />
               </ui:WaitUiElementAppear.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ui:WaitUiElementAppear>
-            <ui:FindChildren Children="[iframe_children]" DisplayName="Get Iframe" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="759,106" sap2010:WorkflowViewState.IdRef="FindChildren_2" Scope="FIND_CHILDREN">
+            <ui:FindChildren sap2010:Annotation.AnnotationText="Get iframe elements" Children="[iframe_children]" DisplayName="Get Iframe" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="759,106" sap2010:WorkflowViewState.IdRef="FindChildren_2" Scope="FIND_CHILDREN">
               <ui:FindChildren.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0592f5a4227a862c9db28b78d8374e54" Selector="&lt;webctrl omit:aaname='[ ]        ' css-selector='div.focused iframe' omit:parentid='cell-tzHVnegp21hC' tag='IFRAME' /&gt;" WaitForReady="INTERACTIVE" />
               </ui:FindChildren.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ui:FindChildren>
             <Assign sap:VirtualizedContainerService.HintSize="759,60" sap2010:WorkflowViewState.IdRef="Assign_7">
               <Assign.To>
@@ -219,7 +255,7 @@
                 <InArgument x:TypeArguments="ui:UiElement[]">[iframe_children.ToArray]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get json form output frame" sap:VirtualizedContainerService.HintSize="759,68" sap2010:WorkflowViewState.IdRef="GetValue_3">
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get json from output frame" sap:VirtualizedContainerService.HintSize="759,68" sap2010:WorkflowViewState.IdRef="GetValue_3">
               <ui:GetValue.Target>
                 <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" Element="[iframe_array(1)]" WaitForReady="INTERACTIVE" />
               </ui:GetValue.Target>
@@ -228,13 +264,18 @@
               </ui:GetValue.Value>
             </ui:GetValue>
             <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="759,59" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_3" JsonObject="[deserialized]" JsonString="[fileio_json]" />
-            <Assign DisplayName="Get output URL" sap:VirtualizedContainerService.HintSize="759,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+            <Assign sap2010:Annotation.AnnotationText="get final output link" DisplayName="Get output URL" sap:VirtualizedContainerService.HintSize="759,60" sap2010:WorkflowViewState.IdRef="Assign_8">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[transfer_url]</OutArgument>
               </Assign.To>
               <Assign.Value>
                 <InArgument x:TypeArguments="x:String">[deserialized("link").ToString]</InArgument>
               </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </Assign>
             <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Runtime Button" sap:VirtualizedContainerService.HintSize="759,106" sap2010:WorkflowViewState.IdRef="Click_62" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
               <ui:Click.CursorPosition>
@@ -281,7 +322,7 @@
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="55592239ff5dfe014411ebc49d49bc8b" Selector="&lt;webctrl tag='COLAB-SESSION' /&gt;&lt;webctrl isleaf='1' parentid='scrollable' tag='PAPER-BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
               </ui:Click.Target>
             </ui:Click>
-            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click OK" sap:VirtualizedContainerService.HintSize="759,106" sap2010:WorkflowViewState.IdRef="Click_65" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" sap2010:Annotation.AnnotationText="Terminate the session before closing window" ClickType="CLICK_SINGLE" DisplayName="Click OK" sap:VirtualizedContainerService.HintSize="759,106" sap2010:WorkflowViewState.IdRef="Click_65" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -295,8 +336,19 @@
               <ui:Click.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="4d9377a83f13abc47c833690a180eb57" Selector="&lt;webctrl id='ok' tag='PAPER-BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
               </ui:Click.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ui:Click>
-            <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="759,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
+            <ui:CloseTab Browser="{x:Null}" sap2010:Annotation.AnnotationText="Close window" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="759,22" sap2010:WorkflowViewState.IdRef="CloseTab_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CloseTab>
           </Sequence>
         </ActivityAction>
       </ui:OpenBrowser.Body>

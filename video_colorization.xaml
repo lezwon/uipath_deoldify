@@ -21,7 +21,7 @@
       <AssemblyReference>System.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_65">
+  <Sequence DisplayName="Start Video Colorization" sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_65">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="desktop_path" />
     </Sequence.Variables>

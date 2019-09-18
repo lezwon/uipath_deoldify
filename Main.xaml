@@ -79,7 +79,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CustomInput DisplayName="Custom Input" sap:VirtualizedContainerService.HintSize="713,86" sap2010:WorkflowViewState.IdRef="CustomInput_1" Result="[result]" URI="index.html" />
+    <ui:CustomInput sap2010:Annotation.AnnotationText="HTML file to take the type of media i.e video/photo. And submission type i.e upload file or url" DisplayName="Custom Input" sap:VirtualizedContainerService.HintSize="713,86" sap2010:WorkflowViewState.IdRef="CustomInput_1" Result="[result]" URI="index.html">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CustomInput>
     <Assign sap:VirtualizedContainerService.HintSize="713,60" sap2010:WorkflowViewState.IdRef="Assign_5">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[choice]</OutArgument>
@@ -88,13 +94,23 @@
         <InArgument x:TypeArguments="x:Int32">[Convert.ToInt32(result)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke generate_url workflow" sap:VirtualizedContainerService.HintSize="713,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="generate_url.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="If url provided, directly submit. If file chosen, upload to file io and provide link." DisplayName="Invoke generate_url workflow" sap:VirtualizedContainerService.HintSize="713,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="generate_url.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="url">[url]</OutArgument>
         <InArgument x:TypeArguments="x:Int32" x:Key="choice">[choice]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <If Condition="[choice &gt; 1]" sap:VirtualizedContainerService.HintSize="713,235" sap2010:WorkflowViewState.IdRef="If_10">
+    <If sap2010:Annotation.AnnotationText="run workflow based on choice. &#xD;&#xA;0 -&gt; Photo by upload&#xD;&#xA;1 -&gt; Photo by url&#xD;&#xA;2 -&gt; Video by upload&#xD;&#xA;3 -&gt; Video by url" Condition="[choice &gt; 1]" sap:VirtualizedContainerService.HintSize="713,235" sap2010:WorkflowViewState.IdRef="If_10">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
       <If.Then>
         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke video_colorization workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="video_colorization.xaml">
           <ui:InvokeWorkflowFile.Arguments>
@@ -113,6 +129,12 @@
         </ui:InvokeWorkflowFile>
       </If.Else>
     </If>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="713,59" sap2010:WorkflowViewState.IdRef="MessageBox_11" Text="[&quot;Your output url: &quot; + transfer_url]" TopMost="True" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="print output url" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="713,59" sap2010:WorkflowViewState.IdRef="MessageBox_11" Text="[&quot;Your output url: &quot; + transfer_url]" TopMost="True">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:MessageBox>
   </Sequence>
 </Activity>
