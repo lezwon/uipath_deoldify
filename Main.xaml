@@ -67,7 +67,7 @@
       <AssemblyReference>System.Management.Automation</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="755,779" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Begin the main deoldify sequence" DisplayName="Start Deoldify Bot" sap:VirtualizedContainerService.HintSize="755,779" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="https://live.staticflickr.com/7162/6810935157_496232b903_o_d.jpg" Name="url" />
       <Variable x:TypeArguments="x:String" Name="transfer_url" />
@@ -77,6 +77,7 @@
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:CustomInput sap2010:Annotation.AnnotationText="HTML file to take the type of media i.e video/photo. And submission type i.e upload file or url" DisplayName="Custom Input" sap:VirtualizedContainerService.HintSize="713,86" sap2010:WorkflowViewState.IdRef="CustomInput_1" Result="[result]" URI="index.html">
@@ -105,7 +106,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <If sap2010:Annotation.AnnotationText="run workflow based on choice. &#xD;&#xA;0 -&gt; Photo by upload&#xD;&#xA;1 -&gt; Photo by url&#xD;&#xA;2 -&gt; Video by upload&#xD;&#xA;3 -&gt; Video by url" Condition="[choice &gt; 1]" sap:VirtualizedContainerService.HintSize="713,235" sap2010:WorkflowViewState.IdRef="If_10">
+    <If sap2010:Annotation.AnnotationText="run workflow based on choice. &#xA;0 -&gt; Photo by upload&#xA;1 -&gt; Photo by url&#xA;2 -&gt; Video by upload&#xA;3 -&gt; Video by url" Condition="[choice &gt; 1]" sap:VirtualizedContainerService.HintSize="713,235" sap2010:WorkflowViewState.IdRef="If_10">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>

@@ -21,21 +21,27 @@
       <AssemblyReference>System.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Start Video Colorization" sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_65">
+  <Sequence sap2010:Annotation.AnnotationText="Used to call the processing workflow. Can save the file to system once url is received here." DisplayName="Start Video Colorization" sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_65">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="desktop_path" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg1:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
       </scg1:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke video_processing workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="video_processing.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Call video processing workflow" DisplayName="Invoke video_processing workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="video_processing.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="url">[url]</InArgument>
         <InArgument x:TypeArguments="x:Int32" x:Key="choice">[choice]</InArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="transfer_url">[transfer_url]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg1:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+        </scg1:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>
